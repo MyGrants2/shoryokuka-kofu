@@ -46,7 +46,7 @@ section:not(.alt) .c,section:not(.alt) .ck label{background:var(--alt)}
 .dn{margin:0 0 12px;color:var(--sub);font-size:14px}
 .dl2 label{display:flex;gap:12px;align-items:flex-start;background:var(--card);border-radius:14px;padding:14px 18px;margin-bottom:8px;cursor:pointer}
 .dl2 input{width:20px;height:20px;margin-top:3px;accent-color:var(--ac);flex:none}
-.dl2 b{display:block;font-size:16px;line-height:1.5}.dl2 small{display:block;color:var(--sub);font-size:14px;line-height:1.6}
+.dl2 b{display:block;font-size:16px;line-height:1.5}.dl2 small a{color:var(--ac);text-decoration:none}.dl2 small{display:block;color:var(--sub);font-size:14px;line-height:1.6}
 .dl2 input:checked+span b{color:var(--sub);text-decoration:line-through}
 .dp{background:var(--alt)}
 .seg{display:inline-flex;background:var(--card);border-radius:980px;padding:4px;margin-bottom:12px}
@@ -116,7 +116,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 <section id="flow"><div class="w" style="max-width:720px">
 <h2>交付申請の流れ</h2>
 <p class="lead">申請システムで始め、jGrantsで完了します。最後まで手続きしてください。</p>
-<div class="step"><div class="n">1</div><div><span class="tag">事前準備</span><h3>交付申請を提出する前に</h3><ul class="pre"><li>必要書類の準備（<a href="#docs">必要書類一覧</a>）</li><li>研修動画の視聴</li><li>賃上げ表明書の作成</li><li>一般事業主行動計画の策定／両立支援のひろばで公表（従業員21名以上の場合）</li></ul></div></div>
+<div class="step"><div class="n">1</div><div><span class="tag">事前準備</span><h3>交付申請を提出する前に</h3><ul class="pre"><li>必要書類の準備（<a href="#docs">必要書類一覧</a>）</li><li>研修動画の視聴</li><li>賃上げ表明書の作成</li><li>一般事業主行動計画の策定／両立支援のひろばで公表（従業員21名以上の場合）　<a href="https://ryouritsu.mhlw.go.jp/index.html" target="_blank" rel="noopener">登録はこちら ↗</a></li></ul></div></div>
 <div class="step"><div class="n">2</div><div><span class="tag">申請システム</span><h3>交付申請を提出</h3><p>マイページから申請します。経費明細の入力と書類の添付を行います。</p></div></div>
 <div class="step"><div class="n">3</div><div><span class="tag">事務局</span><h3>審査・差し戻し対応</h3><p>不備や確認事項があれば差し戻されます。速やかに修正して再提出します。応募申請の内容について修正依頼が来ることもあります。</p></div></div>
 <div class="step"><div class="n">4</div><div><span class="tag">申請システム</span><h3>「交付申請の概要」をダウンロード</h3><p>内容が精査されると発行されます。マイページの詳細画面から保存してください。ここでは完了ではありません。</p></div></div>
@@ -175,7 +175,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 
 <script>
 var DD={a:[["見積依頼書","全経費分"],["見積書","全経費分・最低2者分（確認ポイントは下記）"],["賃金引き上げ計画の表明書","【指定様式】"],["不動産登記事項証明書、賃貸借契約書等","実施場所の確認書類"],["全従業員分の賃金台帳","応募時の直近決算期分（ルールは下記）"],["研修動画の修了証","視聴後の確認テストで取得"]],
-b:[["選定理由書","相見積もりが取れない場合、または最低価格の者を選ばない場合"],["システム構築費の詳細（仕様書）","システム構築費を計上する場合は必須"],["経営力向上計画の認定書","NPO法人の場合（必須）"],["再生事業者の確認書類","再生事業者の場合。支援機関・再生手法ごとに異なる"],["リース料軽減計算書・リース取引に係る宣誓書","リース会社と共同申請する場合"],["履歴事項全部証明書・事業実施場所リスト","応募時から変更がある場合。履歴事項全部証明書は発行から3か月以内、事業実施場所リストは【指定様式】"],["一般事業主行動計画の策定／両立支援のひろばで公表","従業員21名以上の場合"]],
+b:[["選定理由書","相見積もりが取れない場合、または最低価格の者を選ばない場合"],["システム構築費の詳細（仕様書）","システム構築費を計上する場合は必須"],["経営力向上計画の認定書","NPO法人の場合（必須）"],["再生事業者の確認書類","再生事業者の場合。支援機関・再生手法ごとに異なる"],["リース料軽減計算書・リース取引に係る宣誓書","リース会社と共同申請する場合"],["履歴事項全部証明書・事業実施場所リスト","応募時から変更がある場合。履歴事項全部証明書は発行から3か月以内、事業実施場所リストは【指定様式】"],["一般事業主行動計画の策定／両立支援のひろばで公表","従業員21名以上の場合　<a href=\"https://ryouritsu.mhlw.go.jp/index.html\" target=\"_blank\" rel=\"noopener\">登録はこちら ↗</a>"]],
 h:[["履歴事項全部証明書","発行から3か月以内"],["納税証明書（その2）","直近3期分"],["貸借対照表・損益計算書","各直近2期分"],["役員名簿・株主・出資者名簿","【指定様式】"],["1人当たり給与支給総額の確認書",""],["事業実施場所リスト","実施場所が複数の場合。【指定様式】"]],
 k:[["確定申告書の控え（第一表）",""],["納税証明書（その2）","直近1年分"],["事業実施場所リスト","実施場所が複数の場合。【指定様式】"]]};
 var DK="shoryokuka-docs-v1",DS={};
