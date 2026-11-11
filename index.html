@@ -6,8 +6,8 @@
 <title>交付申請ガイド</title>
 <meta name="description" content="採択後にやること、交付申請の流れ、必要書類、チェックリスト、注意事項をまとめた交付申請ガイド。">
 <style>
-:root{--bg:#fff;--alt:#f5f5f7;--tx:#1d1d1f;--sub:#6e6e73;--ln:#d2d2d7;--ac:#0071e3;--card:#fff;--warn:#bf4800;--warnbg:#fff4e8}
-@media(prefers-color-scheme:dark){:root{--bg:#000;--alt:#161617;--tx:#f5f5f7;--sub:#a1a1a6;--ln:#3a3a3c;--ac:#2997ff;--card:#1d1d1f;--warn:#ff9f0a;--warnbg:#2a1d08}}
+:root{--bg:#fff;--alt:#f5f5f7;--tx:#1d1d1f;--sub:#6e6e73;--ln:#d2d2d7;--ac:#0071e3;--card:#fff;--warn:#d70015;--warnbg:#fff0f0}
+@media(prefers-color-scheme:dark){:root{--bg:#000;--alt:#161617;--tx:#f5f5f7;--sub:#a1a1a6;--ln:#3a3a3c;--ac:#2997ff;--card:#1d1d1f;--warn:#ff6961;--warnbg:#2c1415}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:60px}
 body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -26,7 +26,7 @@ h2{font-size:clamp(28px,5vw,44px);letter-spacing:-.015em;line-height:1.2;margin:
 .lead{text-align:center;color:var(--sub);font-size:18px;margin:0 auto 48px;max-width:620px}
 .g{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .c{background:var(--card);border-radius:24px;padding:28px}
-section:not(.alt) .c{background:var(--alt)}
+section:not(.alt) .c,section:not(.alt) .ck label{background:var(--alt)}
 .c h3{margin:0 0 8px;font-size:21px;line-height:1.3}.c p{margin:0;color:var(--sub);font-size:15px}
 .big{font-size:40px;font-weight:700;letter-spacing:-.02em;color:var(--tx);line-height:1.2}
 .tl{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:28px;text-align:center}
@@ -40,6 +40,25 @@ section:not(.alt) .c{background:var(--alt)}
 .step:last-child{border:0}
 .n{flex:none;width:36px;height:36px;border-radius:50%;background:var(--ac);color:#fff;display:grid;place-items:center;font-weight:700}
 .step h3{margin:0 0 4px;font-size:19px}.step p{margin:0;color:var(--sub);font-size:15px}
+.step .pre{margin:6px 0 0;padding-left:20px;color:var(--sub);font-size:15px}.step .pre li{margin:3px 0}.step .pre a{color:var(--ac);text-decoration:none}
+.dg{font-size:22px;margin:36px 0 8px;display:flex;align-items:center;gap:10px}.dg:first-of-type{margin-top:24px}
+.rq{font-size:12px;font-weight:600;background:var(--ac);color:#fff;border-radius:980px;padding:1px 10px}.rq.opt{background:none;border:1px solid var(--ac);color:var(--ac)}
+.dn{margin:0 0 12px;color:var(--sub);font-size:14px}
+.dl2 label{display:flex;gap:12px;align-items:flex-start;background:var(--card);border-radius:14px;padding:14px 18px;margin-bottom:8px;cursor:pointer}
+.dl2 input{width:20px;height:20px;margin-top:3px;accent-color:var(--ac);flex:none}
+.dl2 b{display:block;font-size:16px;line-height:1.5}.dl2 small{display:block;color:var(--sub);font-size:14px;line-height:1.6}
+.dl2 input:checked+span b{color:var(--sub);text-decoration:line-through}
+.dp{background:var(--alt)}
+.seg{display:inline-flex;background:var(--card);border-radius:980px;padding:4px;margin-bottom:12px}
+.seg button{border:0;background:none;color:var(--tx);font:inherit;font-size:14px;padding:6px 20px;border-radius:980px;cursor:pointer}
+.seg button.on{background:var(--ac);color:#fff}
+.dd{margin-top:16px}.dd .dl2{padding-bottom:12px}.dd .dl2 label{background:var(--alt)}.dd .seg{background:var(--alt)}.dd summary .rq{margin-left:8px;vertical-align:2px}
+.alert{background:var(--warnbg);border:2px solid var(--warn);border-radius:20px;color:var(--warn);max-width:640px;margin:0 auto 32px;text-align:left}
+.alert .ai{display:flex;gap:14px;align-items:flex-start;padding:16px 20px}
+.alert .ic{flex:none;width:22px;height:22px;border-radius:50%;background:var(--warn);color:var(--bg);font-weight:700;font-size:14px;display:grid;place-items:center;margin-top:2px}
+.alert ul{margin:0;padding:0;list-style:none;flex:1;font-size:15px;font-weight:600;line-height:1.7}
+.alert li+li{margin-top:4px}
+.alert a{color:var(--warn);text-decoration:underline;font-weight:600}
 .tag{display:inline-block;font-size:12px;border:1px solid var(--ln);border-radius:980px;padding:0 10px;margin-bottom:6px;color:var(--sub)}
 details{background:var(--card);border-radius:18px;margin-bottom:12px;padding:0 24px}
 details summary{cursor:pointer;padding:20px 0;font-size:19px;font-weight:600;list-style:none;display:flex;justify-content:space-between}
@@ -59,70 +78,67 @@ details li{margin:4px 0}details li b{color:var(--tx)}
 table{width:100%;border-collapse:collapse;font-size:14px;background:var(--card);border-radius:18px;overflow:hidden}
 th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--ln)}th{color:var(--sub);font-weight:600}
 .sc{overflow-x:auto;margin-top:24px}
+section:not(.alt) details,section:not(.alt) table{background:var(--alt)}
+.dl{background:var(--ac)!important;color:#fff;text-align:center;padding:36px 28px}.dl p{color:#e0efff!important}.dl .big{color:#fff;font-size:clamp(26px,5vw,40px);margin:6px 0 10px}
+.after{text-align:center;margin:28px 0 0}.after a{color:var(--ac);text-decoration:none;font-size:17px}
 footer{background:var(--alt);padding:40px 0;font-size:12px;color:var(--sub)}footer a{color:var(--ac)}footer p{margin:6px 0}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
 </style>
 </head>
 <body>
-<nav><div><b>交付申請ガイド</b><a href="#schedule">スケジュール</a><a href="#flow">申請の流れ</a><a href="#docs">必要書類</a><a href="#check">チェックリスト</a><a href="#notes">注意事項</a></div></nav>
+<nav><div><b>交付申請ガイド</b><a href="#schedule">スケジュール</a><a href="#flow">申請の流れ</a><a href="#docs">必要書類チェックリスト</a><a href="#notes">注意事項</a><a href="https://portal.shoryokuka.smrj.go.jp/mypage/login" target="_blank" rel="noopener" style="color:var(--ac)">申請マイページ ↗</a></div></nav>
 
 <header class="hero w">
 <p class="k">中小企業省力化投資補助事業（一般型）</p>
 <h1>交付申請ガイド</h1>
-<p class="l">採択後にやること、申請の流れ、必要書類、提出前チェックまで。交付申請に必要なことを、順番に確認できます。</p>
-<a class="btn" href="#check">チェックリストを使う</a> <a class="btn s" href="#schedule">全体像を見る</a>
+<p class="l">採択後にやること、申請の流れ、必要書類のチェックまで。交付申請に必要なことを、順番に確認できます。</p>
+<div class="alert" id="al" role="alert"><div class="ai"><span class="ic" aria-hidden="true">!</span><ul><li>【重要】交付決定前の契約・発注・支払いは、補助対象外です。</li><li>賃上げ目標を達成できない場合は、原則、補助金の返還が必要です。<a href="#notes">注意事項を確認する</a></li></ul></div></div>
+<a class="btn" href="#docs">チェックリストを使う</a> <a class="btn s" href="#schedule">全体像を見る</a> <a class="btn s" href="https://portal.shoryokuka.smrj.go.jp/mypage/login" target="_blank" rel="noopener">申請マイページにログイン ↗</a>
 </header>
 
 <section class="alt" id="schedule"><div class="w">
 <h2>採択後にやること・全体スケジュール</h2>
-<p class="lead">交付申請の期限は採択発表日から2か月後。交付決定の前に発注すると補助対象外です。</p>
+<p class="lead">交付申請の期限は、採択発表日から2か月後。交付決定の前に発注すると補助対象外です。</p>
 <div class="tl">
-<div>採択発表日</div>
-<div class="hl">交付申請<span>発表から2か月以内</span></div>
+<div>採択発表日<span>マイページで確認</span></div>
+<div>申請の準備<span>研修動画・書類</span></div>
+<div class="hl">交付申請を提出<span>発表から2か月以内</span></div>
+<div>審査・差し戻し対応<span>「交付申請の概要」をjGrantsへ</span></div>
 <div>交付決定<span>ここから発注可</span></div>
-<div>補助事業の完了<span>契約〜納品〜支払い</span></div>
-<div>実績報告<span>完了から30日以内</span></div>
 </div>
-<div class="g">
-<div class="c"><p>補助事業実施期間</p><div class="big">18か月</div><p>交付決定から18か月以内。採択発表日からは20か月以内です。</p></div>
-<div class="c"><p>交付申請の期限</p><div class="big">2か月</div><p>採択発表日から。期限までに申請がないと採択取消です。やむを得ない場合は事前に事務局へ連絡し、理由書を提出します。</p></div>
-<div class="c"><p>実績報告の期限</p><div class="big">30日</div><p>補助事業完了日から30日を過ぎた日、または事業完了期限日の早い方までに提出します。</p></div>
-</div>
+<div class="c dl"><p>交付申請の期限</p><div class="big">採択発表日から2か月以内</div><p>期限までに申請がないと、採択は取消になります。やむを得ない事情がある場合は、期限前に事務局へ連絡し、理由書を提出してください。</p></div>
 <div class="g" style="margin-top:16px">
-<div class="c"><h3>採択後に行うこと</h3><p>①マイページで採択結果と特例の有無を確認 ②研修動画を視聴し確認テストを受け、修了証を取得（交付申請で提出） ③応募時の事業計画の目標値を確認</p></div>
-<div class="c"><h3>機械の導入は早めに確認</h3><p>メーカー等に進捗を確認しながら、完了期限を見据えて進めます。間に合わないと分かったら、すぐ事務局へ連絡してください。</p></div>
+<div class="c"><h3>採択後に行うこと</h3><p>①マイページで採択結果と特例の有無を確認 ②研修動画を視聴し、確認テストを受けて修了証を取得（交付申請で提出） ③応募時の事業計画の目標値を確認</p></div>
+<div class="c"><h3>交付申請の流れを見る</h3><p>申請システムからjGrantsまで、7つのステップで手続きを説明しています。</p><p style="margin-top:10px"><a href="#flow" style="color:var(--ac);text-decoration:none">交付申請の流れへ →</a></p></div>
 </div>
+<p class="after"><a href="https://shoryokuka.smrj.go.jp/ippan/">交付申請提出後の流れはこちら →</a></p>
 </div></section>
-
 <section id="flow"><div class="w" style="max-width:720px">
 <h2>交付申請の流れ</h2>
 <p class="lead">申請システムで始め、jGrantsで完了します。最後まで手続きしてください。</p>
-<div class="step"><div class="n">1</div><div><span class="tag">申請システム</span><h3>交付申請を提出</h3><p>マイページから申請します。経費明細の入力と書類の添付を行います。</p></div></div>
-<div class="step"><div class="n">2</div><div><span class="tag">事務局</span><h3>審査・差し戻し対応</h3><p>不備や確認事項があれば差し戻されます。速やかに修正して再提出します。応募申請の内容について修正依頼が来ることもあります。</p></div></div>
-<div class="step"><div class="n">3</div><div><span class="tag">申請システム</span><h3>「交付申請の概要」をダウンロード</h3><p>内容が精査されると発行されます。マイページの詳細画面から保存してください。ここでは完了ではありません。</p></div></div>
-<div class="step"><div class="n">4</div><div><span class="tag">jGrants</span><h3>「交付申請の概要」を提出</h3><p>jGrantsに添付して手続きを進めます。</p></div></div>
-<div class="step"><div class="n">5</div><div><span class="tag">事務局</span><h3>審査完了</h3><p>jGrantsでの申請完了後に、事務局の審査が完了します。</p></div></div>
-<div class="step"><div class="n">6</div><div><span class="tag">事務局</span><h3>交付決定</h3><p>通知を受けてから補助事業を開始します。いかなる理由でも事前着手は認められません。</p></div></div>
+<div class="step"><div class="n">1</div><div><span class="tag">事前準備</span><h3>交付申請を提出する前に</h3><ul class="pre"><li>必要書類の準備（<a href="#docs">必要書類一覧</a>）</li><li>研修動画の視聴</li><li>賃上げ表明書の作成</li><li>一般事業主行動計画の策定／両立支援のひろばで公表（従業員21名以上の場合）</li></ul></div></div>
+<div class="step"><div class="n">2</div><div><span class="tag">申請システム</span><h3>交付申請を提出</h3><p>マイページから申請します。経費明細の入力と書類の添付を行います。</p></div></div>
+<div class="step"><div class="n">3</div><div><span class="tag">事務局</span><h3>審査・差し戻し対応</h3><p>不備や確認事項があれば差し戻されます。速やかに修正して再提出します。応募申請の内容について修正依頼が来ることもあります。</p></div></div>
+<div class="step"><div class="n">4</div><div><span class="tag">申請システム</span><h3>「交付申請の概要」をダウンロード</h3><p>内容が精査されると発行されます。マイページの詳細画面から保存してください。ここでは完了ではありません。</p></div></div>
+<div class="step"><div class="n">5</div><div><span class="tag">jGrants</span><h3>「交付申請の概要」を提出</h3><p>jGrantsに添付して手続きを進めます。</p></div></div>
+<div class="step"><div class="n">6</div><div><span class="tag">事務局</span><h3>審査完了</h3><p>jGrantsでの申請完了後に、事務局の審査が完了します。</p></div></div>
+<div class="step"><div class="n">7</div><div><span class="tag">事務局</span><h3>交付決定</h3><p>通知を受けてから補助事業を開始します。いかなる理由でも事前着手は認められません。</p></div></div>
 </div></section>
 
 <section class="alt" id="docs"><div class="w" style="max-width:760px">
-<h2>必要書類一覧</h2>
+<h2>必要書類チェックリスト</h2>
 <p class="lead">様式は事務局サイトの<a href="https://shoryokuka.smrj.go.jp/ippan/download/" style="color:var(--ac)">資料ダウンロード</a>から入手できます。</p>
-<details open><summary>全事業者共通</summary><ul>
-<li>見積依頼書（全経費分）</li><li>見積書（全経費分・最低2者分）</li><li>選定理由書（該当者のみ）</li>
-<li>システム構築費の詳細（仕様書。システム構築費を計上する場合は必須）</li>
-<li><b>【指定様式】賃金引き上げ計画の表明書</b></li><li>不動産登記事項証明書、賃貸借契約書等（実施場所の確認）</li>
-<li>全従業員分の賃金台帳（応募時の直近決算期分）</li><li>研修動画の修了証</li></ul></details>
-<details><summary>事業者の区分によって追加</summary><ul>
-<li><b>NPO法人：</b>経営力向上計画の認定書（必須）</li>
-<li><b>再生事業者：</b>再生事業者の確認書類（支援機関・再生手法ごとに異なる）</li>
-<li><b>リース会社と共同申請：</b>リース料軽減計算書、リース取引に係る宣誓書</li>
-<li><b>応募時から変更がある場合：</b>履歴事項全部証明書（発行から3か月以内）、【指定様式】事業実施場所リスト</li></ul></details>
-<details><summary>応募申請で提出済み（事務局から依頼があった場合のみ）</summary><ul>
-<li><b>法人：</b>履歴事項全部証明書（3か月以内）、納税証明書（その2）直近3期分、貸借対照表・損益計算書 各直近2期分、【指定様式】役員名簿、株主・出資者名簿、1人当たり給与支給総額の確認書</li>
-<li><b>個人事業主：</b>確定申告書の控え（第一表）、納税証明書（その2）直近1年分</li>
-<li><b>実施場所が複数：</b>【指定様式】事業実施場所リスト</li>
-<li>求められた書類以外は添付しないでください。再審査になり、交付決定が遅れます。</li></ul></details>
+<div class="prog dp"><div class="t"><span id="dpt">全事業者共通 0 / 0 件 完了</span><button class="rst" id="drst">リセット</button></div><div class="bar"><i id="dpb"></i></div></div>
+<h3 class="dg">全事業者共通 <span class="rq">必須</span></h3>
+<div class="dl2" id="da"></div>
+<details class="dd"><summary><span>該当する場合のみ提出 <span class="rq opt">条件あり</span></span></summary>
+<p class="dn">当てはまる項目だけ、チェックして用意してください。</p>
+<div class="dl2" id="db"></div></details>
+<details class="dd"><summary><span>事務局から依頼があった場合のみ <span class="rq opt">依頼時のみ</span></span></summary>
+<p class="dn">応募申請で提出済みの書類です。<b>求められた書類以外は添付しないでください。</b>再審査になり、交付決定が遅れます。</p>
+<div class="seg" id="seg"><button class="on" data-t="h">法人</button><button data-t="k">個人事業主</button></div>
+<div class="dl2" id="dc"></div></details>
+<h3 class="dg" style="margin-top:48px">書類づくりのポイント</h3>
 <details><summary>見積書の確認ポイント</summary><ul>
 <li>「一式」表記や一括値引きは不可。項目ごとに詳細に記載し、値引きは各項目へ按分</li>
 <li>交付申請日時点で有効で、補助金交付候補者宛。税抜・税込が明確</li>
@@ -134,25 +150,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 <li>給与明細・出勤簿・源泉徴収票は不可。労基法の10項目が確認できる賃金台帳を提出</li>
 <li>添付口は5つ（1つ50MBまで、PDF・ZIP）。足りなければZIPにまとめ、コメント欄に説明を入力</li>
 <li>給与支給総額は控除前の課税支給額。福利厚生費・法定福利費・退職金は含めない</li></ul></details>
-<div class="sc"><table><caption style="text-align:left;color:var(--sub);padding:0 0 8px;font-size:14px">経費区分と上限</caption>
-<tr><th>経費区分</th><th>上限・条件</th></tr>
-<tr><td>機械装置・システム構築費</td><td>50万円（税抜）以上の設備投資が1つ以上必須</td></tr>
-<tr><td>運搬費</td><td>機械装置・システム構築費以外の経費は総額500万円（税抜）まで</td></tr>
-<tr><td>技術導入費・知的財産権等関連経費</td><td>補助対象経費総額の3分の1まで</td></tr>
-<tr><td>外注費・専門家経費</td><td>補助対象経費総額の2分の1まで（専門家は1日5万円上限）</td></tr>
-<tr><td>クラウドサービス利用費</td><td>新規契約のみ。補助事業実施期間分のみ対象</td></tr></table></div>
 </div></section>
-
-<section id="check"><div class="w" style="max-width:720px">
-<h2>提出前チェックリスト</h2>
-<p class="lead">チェックの状態はこのブラウザにだけ保存されます。</p>
-<div class="prog"><div class="t"><span id="pt">0 / 0 完了</span><button class="rst" id="rst">リセット</button></div><div class="bar"><i id="pb"></i></div></div>
-<div class="ck" id="ck"></div>
-</div></section>
-
-<section class="alt" id="notes"><div class="w" style="max-width:760px">
+<section id="notes"><div class="w" style="max-width:760px">
 <h2>注意事項</h2>
-<p class="lead">不備があると交付決定が遅れ、補助事業の期間が短くなります。</p>
+<p class="lead">不備があると、審査が長引き、交付決定が遅れます。</p>
 <div class="warn"><h3>事前着手は認められません</h3><p>交付決定前の契約・発注や、交付決定前に発生した費用は補助対象外です。</p></div>
 <div class="warn"><h3>賃上げ目標を達成できないと返還</h3><p>「1人当たり給与支給総額」の目標値を事業計画の最終年度に達成できないと、原則、補助金の返還が発生します（再生事業者は免除）。目標値は変更できません。実現不可能と判断した場合は事務局へ連絡してください。交付申請日までに、全従業員・役員へ目標値を表明する必要があります。</p></div>
 <div class="g">
@@ -173,22 +174,19 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 </div></footer>
 
 <script>
-var G=[["採択後の準備",["マイページで採択結果と特例の有無を確認した","研修動画を視聴し、確認テストを終えて修了証を保存した","応募時の事業計画の目標値を確認した","交付申請の期限（採択発表日から2か月以内）をカレンダーに入れた"]],
-["賃上げ・従業員への表明",["1人当たり給与支給総額の目標値を、全従業員（代表者）・役員に表明した","【指定様式】賃金引き上げ計画の表明書を作成した（表明方法を記載）","目標を達成できる計画であることを確認した"]],
-["見積書",["経費ごとに見積依頼書を作成し、控えを保管した","一式表記・一括値引きがない","交付申請日時点で有効な見積書である（宛名は補助金交付候補者）","50万円（税抜）以上の発注先は、同一条件で2者以上の見積書がある","相見積もりを取れない・最低価格者を選ばない場合は選定理由書がある","関係の深い会社（同一代表者・資本関係など）からの見積ではない"]],
-["賃金台帳",["直近決算時点の全従業員分が揃っている","直近決算期の各月分が確認でき、すべて鮮明である","給与明細や出勤簿ではなく、10項目を満たす賃金台帳である","給与支給総額が確認書の数字と一致している（控除前で計算）"]],
-["経費明細・その他の書類",["50万円（税抜）以上の機械装置・システムが1つ以上ある","応募時に計画していない設備を追加していない","補助対象外の経費（諸経費・雑費など）を含めていない","システム構築費がある場合は仕様書を添付した","不動産登記事項証明書または賃貸借契約書等を用意した","区分に応じた追加書類（NPO・再生事業者・リース・変更あり）を確認した"]],
-["提出と決定まで",["申請システムで交付申請を提出した","差し戻しには速やかに対応している","「交付申請の概要」をダウンロードし、jGrantsに添付して提出した","交付決定の通知を受けるまで、契約・発注をしていない","提出書類の控えを保管した"]]];
-var K="shoryokuka-ck-v1",S={};
-try{S=JSON.parse(localStorage.getItem(K)||"{}")}catch(e){S={}}
-var root=document.getElementById("ck"),tot=0,h="";
-G.forEach(function(g,i){h+="<h3>"+g[0]+"</h3>";g[1].forEach(function(t,j){var id=i+"-"+j;tot++;h+='<label><input type="checkbox" data-id="'+id+'"'+(S[id]?" checked":"")+"><span>"+t+"</span></label>"})});
-root.innerHTML=h;
-function upd(){var n=root.querySelectorAll("input:checked").length;document.getElementById("pt").textContent=n+" / "+tot+" 完了";document.getElementById("pb").style.width=(n/tot*100)+"%"}
-function sv(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
-root.addEventListener("change",function(e){S[e.target.dataset.id]=e.target.checked;sv();upd()});
-document.getElementById("rst").onclick=function(){S={};sv();root.querySelectorAll("input").forEach(function(c){c.checked=false});upd()};
-upd();
+var DD={a:[["見積依頼書","全経費分"],["見積書","全経費分・最低2者分（確認ポイントは下記）"],["賃金引き上げ計画の表明書","【指定様式】"],["不動産登記事項証明書、賃貸借契約書等","実施場所の確認書類"],["全従業員分の賃金台帳","応募時の直近決算期分（ルールは下記）"],["研修動画の修了証","視聴後の確認テストで取得"]],
+b:[["選定理由書","相見積もりが取れない場合、または最低価格の者を選ばない場合"],["システム構築費の詳細（仕様書）","システム構築費を計上する場合は必須"],["経営力向上計画の認定書","NPO法人の場合（必須）"],["再生事業者の確認書類","再生事業者の場合。支援機関・再生手法ごとに異なる"],["リース料軽減計算書・リース取引に係る宣誓書","リース会社と共同申請する場合"],["履歴事項全部証明書・事業実施場所リスト","応募時から変更がある場合。履歴事項全部証明書は発行から3か月以内、事業実施場所リストは【指定様式】"],["一般事業主行動計画の策定／両立支援のひろばで公表","従業員21名以上の場合"]],
+h:[["履歴事項全部証明書","発行から3か月以内"],["納税証明書（その2）","直近3期分"],["貸借対照表・損益計算書","各直近2期分"],["役員名簿・株主・出資者名簿","【指定様式】"],["1人当たり給与支給総額の確認書",""],["事業実施場所リスト","実施場所が複数の場合。【指定様式】"]],
+k:[["確定申告書の控え（第一表）",""],["納税証明書（その2）","直近1年分"],["事業実施場所リスト","実施場所が複数の場合。【指定様式】"]]};
+var DK="shoryokuka-docs-v1",DS={};
+try{DS=JSON.parse(localStorage.getItem(DK)||"{}")}catch(e){DS={}}
+function dr(id,k){var h="";DD[k].forEach(function(r,i){var q=k+i;h+='<label><input type="checkbox" data-id="'+q+'"'+(DS[q]?" checked":"")+"><span><b>"+r[0]+"</b>"+(r[1]?"<small>"+r[1]+"</small>":"")+"</span></label>"});document.getElementById(id).innerHTML=h}
+function dupd(){var c=document.querySelectorAll("#da input"),n=0;c.forEach(function(x){if(x.checked)n++});document.getElementById("dpt").textContent="全事業者共通 "+n+" / "+c.length+" 件 完了";document.getElementById("dpb").style.width=(n/c.length*100)+"%"}
+function dsv(){try{localStorage.setItem(DK,JSON.stringify(DS))}catch(e){}}
+dr("da","a");dr("db","b");dr("dc","h");dupd();
+document.getElementById("docs").addEventListener("change",function(e){if(e.target.dataset.id){DS[e.target.dataset.id]=e.target.checked;dsv();dupd()}});
+document.getElementById("seg").addEventListener("click",function(e){var t=e.target.dataset.t;if(!t)return;this.querySelectorAll("button").forEach(function(x){x.classList.toggle("on",x===e.target)});dr("dc",t)});
+document.getElementById("drst").onclick=function(){DS={};dsv();["a","b","h","k"].forEach(function(k){});dr("da","a");dr("db","b");var on=document.querySelector("#seg .on").dataset.t;dr("dc",on);dupd()};
 </script>
 </body>
 </html>
