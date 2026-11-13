@@ -60,6 +60,16 @@ section:not(.alt) .c,section:not(.alt) .ck label{background:var(--alt)}
 .alert ul{margin:0;padding:0;list-style:none;flex:1;font-size:15px;font-weight:600;line-height:1.7}
 .alert li+li{margin-top:4px}
 .alert a{color:var(--warn);text-decoration:underline;font-weight:600}
+button.btn{border:0;font:inherit;font-size:17px;cursor:pointer}button.btn:disabled{opacity:.35;cursor:not-allowed}
+dialog{border:0;border-radius:24px;padding:0;width:calc(100% - 32px);max-width:640px;max-height:86vh;background:var(--bg);color:var(--tx);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog[open]{display:flex;flex-direction:column}
+dialog::backdrop{background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.nh{padding:24px 24px 8px}.nh h2{font-size:22px;text-align:left;color:var(--warn);margin:0 0 6px}.nh p{margin:0;font-size:14px;color:var(--sub)}
+.nb{overflow:auto;padding:4px 24px 12px;flex:1}
+.ni{margin:16px 0}.ni h3{font-size:16px;color:var(--warn);margin:0 0 2px}.ni p{margin:0;font-size:14px;color:var(--sub)}
+.nz{margin:20px 0 4px;padding:14px 16px;border-radius:14px;background:var(--warnbg);font-size:14px;color:var(--warn);font-weight:600}
+.nf{padding:14px 24px 20px;border-top:1px solid var(--ln);text-align:center}.nf p{margin:0 0 10px;font-size:13px;color:var(--sub)}
+body.lock{overflow:hidden}
 .tag{display:inline-block;font-size:12px;border:1px solid var(--ln);border-radius:980px;padding:0 10px;margin-bottom:6px;color:var(--sub)}
 details{background:var(--card);border-radius:18px;margin-bottom:12px;padding:0 24px}
 details summary{cursor:pointer;padding:20px 0;font-size:19px;font-weight:600;list-style:none;display:flex;justify-content:space-between}
@@ -93,13 +103,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 <p class="k">中小企業省力化投資補助事業（一般型）</p>
 <h1>交付申請ガイド</h1>
 <p class="l">採択後にやること、申請の流れ、必要書類のチェックまで。交付申請に必要なことを、順番に確認できます。</p>
-<div class="alert" id="al" role="alert"><div class="ai"><span class="ic" aria-hidden="true">!</span><ul><li>【重要】交付決定前の契約・発注・支払いは、補助対象外です。</li><li>賃上げ目標を達成できない場合は、原則、補助金の返還が必要です。<br><a href="#notes">注意事項を確認する</a></li></ul></div></div>
+<div class="alert" id="al" role="alert"><div class="ai"><span class="ic" aria-hidden="true">!</span><ul><li>【重要】交付決定前の契約・発注・支払いは、補助対象外です。</li><li>賃上げ目標を達成できない場合は、原則、補助金の返還が必要です。<a href="#notes">注意事項を確認する</a></li></ul></div></div>
 <a class="btn" href="#docs">チェックリストを使う</a> <a class="btn s" href="https://portal.shoryokuka.smrj.go.jp/mypage/login" target="_blank" rel="noopener">申請マイページにログイン ↗</a>
 </header>
 
 <section class="alt" id="schedule"><div class="w">
 <h2>採択後にやること・全体スケジュール</h2>
-<p class="lead">交付申請の期限は、採択発表日から2か月後。<br>交付決定の前に発注すると補助対象外です。</p>
+<p class="lead">交付申請の期限は、採択発表日から2か月後。交付決定の前に発注すると補助対象外です。</p>
 <div class="tl">
 <div>採択発表日<span>マイページで確認</span></div>
 <div>申請の準備<span>研修動画・書類</span></div>
@@ -107,7 +117,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 <div>審査・差し戻し対応<span>「交付申請の概要」をjGrantsへ</span></div>
 <div>交付決定<span>ここから発注可</span></div>
 </div>
-<div class="c dl"><p>交付申請の期限</p><div class="big">採択発表日から2か月以内</div><p>期限までに申請がないと、採択は取消になります。やむを得ない事情がある場合は、期限前に事務局へ連絡し、<br>理由書を提出してください。</p></div>
+<div class="c dl"><p>交付申請の期限</p><div class="big">採択発表日から2か月以内</div><p>期限までに申請がないと、採択は取消になります。やむを得ない事情がある場合は、期限前に事務局へ連絡し、理由書を提出してください。</p></div>
 <div class="g" style="margin-top:16px">
 <div class="c"><h3>採択後に行うこと</h3><p>①マイページで採択結果と特例の有無を確認 ②研修動画を視聴し、確認テストを受けて修了証を取得（交付申請で提出） ③応募時の事業計画の目標値を確認</p></div>
 <div class="c"><h3>交付申請の流れを見る</h3><p>申請システムからjGrantsまで、7つのステップで手続きを説明しています。</p><p style="margin-top:10px"><a href="#flow" style="color:var(--ac);text-decoration:none">交付申請の流れへ →</a></p></div>
@@ -156,6 +166,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 <section id="notes"><div class="w" style="max-width:760px">
 <h2>注意事項</h2>
 <p class="lead">不備があると、審査が長引き、交付決定が遅れます。</p>
+<p style="text-align:center;margin:-24px 0 32px"><button type="button" class="btn s" id="nre">注意事項をポップアップで表示</button></p>
 <div class="warn"><h3>事前着手は認められません</h3><p>交付決定前の契約・発注や、交付決定前に発生した費用は補助対象外です。</p></div>
 <div class="warn"><h3>賃上げ目標を達成できないと返還</h3><p>「1人当たり給与支給総額」の目標値を事業計画の最終年度に達成できないと、原則、補助金の返還が発生します（再生事業者は免除）。目標値は変更できません。実現不可能と判断した場合は事務局へ連絡してください。交付申請日までに、全従業員・役員へ目標値を表明する必要があります。</p></div>
 <div class="g">
@@ -175,6 +186,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 <p>このサイトは非公式の要約です。最新の内容と正確な要件は、必ず公募要領・手引き・事務局の案内で確認してください。</p>
 </div></footer>
 
+<dialog id="nt" aria-labelledby="nth2"><div class="nh"><h2 id="nth2">⚠ 交付申請の前に、必ずお読みください</h2><p>以下の内容を最後までご確認のうえ、お進みください。</p></div><div class="nb" id="ntb"></div><div class="nf"><p id="nthint">↓ 最後までスクロールすると、ボタンが押せるようになります</p><button type="button" class="btn" id="nok" disabled>内容を確認しました</button></div></dialog>
 <script>
 var DD={a:[["見積依頼書","全経費分"],["見積書","全経費分・最低2者分（確認ポイントは下記）"],["賃金引き上げ計画の表明書","【指定様式】"],["不動産登記事項証明書、賃貸借契約書等","実施場所の確認書類"],["全従業員分の賃金台帳","応募時の直近決算期分（ルールは下記）"],["研修動画の修了証","視聴後の確認テストで取得"]],
 b:[["選定理由書","相見積もりが取れない場合、または最低価格の者を選ばない場合"],["システム構築費の詳細（仕様書）","システム構築費を計上する場合は必須"],["経営力向上計画の認定書","NPO法人の場合（必須）"],["再生事業者の確認書類","再生事業者の場合。支援機関・再生手法ごとに異なる"],["リース料軽減計算書・リース取引に係る宣誓書","リース会社と共同申請する場合"],["履歴事項全部証明書・事業実施場所リスト","応募時から変更がある場合。履歴事項全部証明書は発行から3か月以内、事業実施場所リストは【指定様式】"],["一般事業主行動計画の策定／両立支援のひろばで公表","従業員21名以上の場合　<a href=\"https://ryouritsu.mhlw.go.jp/index.html\" target=\"_blank\" rel=\"noopener\">登録はこちら ↗</a>"]],
@@ -189,6 +201,17 @@ dr("da","a");dr("db","b");dr("dc","h");dupd();
 document.getElementById("docs").addEventListener("change",function(e){if(e.target.dataset.id){DS[e.target.dataset.id]=e.target.checked;dsv();dupd()}});
 document.getElementById("seg").addEventListener("click",function(e){var t=e.target.dataset.t;if(!t)return;this.querySelectorAll("button").forEach(function(x){x.classList.toggle("on",x===e.target)});dr("dc",t)});
 document.getElementById("drst").onclick=function(){DS={};dsv();["a","b","h","k"].forEach(function(k){});dr("da","a");dr("db","b");var on=document.querySelector("#seg .on").dataset.t;dr("dc",on);dupd()};
+
+(function(){var nt=document.getElementById("nt"),nb=document.getElementById("ntb"),ok=document.getElementById("nok"),hint=document.getElementById("nthint");
+if(!nt||!nt.showModal)return;
+function fill(){var h="",i=0;document.querySelectorAll("#notes .warn,#notes .c").forEach(function(e){var t=e.querySelector("h3"),q=e.querySelector("p");if(!t||!q)return;h+='<div class="ni"><h3>'+String.fromCharCode(9312+i)+" "+t.textContent+"</h3><p>"+q.textContent+"</p></div>";i++});h+='<p class="nz">📋 最終確認のお願い：内容に不明な点がある場合は、公募要領・交付申請の手引き、または事務局でご確認ください。</p>';nb.innerHTML=h}
+function chk(){if(nb.scrollTop+nb.clientHeight>=nb.scrollHeight-8){ok.disabled=false;hint.textContent="内容をご確認のうえ、ボタンを押してください"}}
+function open(){fill();ok.disabled=true;hint.textContent="↓ 最後までスクロールすると、ボタンが押せるようになります";document.body.classList.add("lock");nt.showModal();nb.scrollTop=0;chk()}
+nb.addEventListener("scroll",chk);
+nt.addEventListener("cancel",function(e){e.preventDefault()});
+ok.addEventListener("click",function(){nt.close();document.body.classList.remove("lock")});
+var r=document.getElementById("nre");if(r)r.addEventListener("click",open);
+open();})();
 </script>
 </body>
 </html>
