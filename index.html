@@ -10,7 +10,8 @@
 @media(prefers-color-scheme:dark){:root{--bg:#000;--alt:#161617;--tx:#f5f5f7;--sub:#a1a1a6;--ln:#3a3a3c;--ac:#2997ff;--card:#1d1d1f;--warn:#ff6961;--warnbg:#2c1415}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:60px}
-body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;word-break:auto-phrase}
+h1,h2,h3,summary{text-wrap:balance}
 nav{position:sticky;top:0;z-index:9;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--ln)}
 nav div{max-width:980px;margin:auto;padding:0 22px;height:48px;display:flex;align-items:center;gap:26px;overflow-x:auto;white-space:nowrap;font-size:13px}
 nav b{font-size:14px}nav a{color:var(--sub);text-decoration:none}nav a:hover{color:var(--tx)}
