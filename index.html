@@ -14,6 +14,7 @@ body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,Bli
 h1,h2,h3,summary{text-wrap:balance}
 nav{position:sticky;top:0;z-index:9;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--ln)}
 nav div{max-width:980px;margin:auto;padding:0 22px;height:48px;display:flex;align-items:center;gap:26px;overflow-x:auto;white-space:nowrap;font-size:13px}
+nav div>:first-child{margin-left:auto}nav div>:last-child{margin-right:auto}
 nav b{font-size:14px}nav a{color:var(--sub);text-decoration:none}nav a:hover{color:var(--tx)}
 .w{max-width:980px;margin:auto;padding:0 22px}
 .hero{text-align:center;padding:96px 0 80px}
@@ -91,7 +92,6 @@ th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--ln)}th{col
 .sc{overflow-x:auto;margin-top:24px}
 section:not(.alt) details,section:not(.alt) table{background:var(--alt)}
 .dl{background:var(--ac)!important;color:#fff;text-align:center;padding:36px 28px}.dl p{color:#e0efff!important}.dl .big{color:#fff;font-size:clamp(26px,5vw,40px);margin:6px 0 10px}
-.after{text-align:center;margin:28px 0 0}.after a{color:var(--ac);text-decoration:none;font-size:17px}
 footer{background:var(--alt);padding:40px 0;font-size:12px;color:var(--sub)}footer a{color:var(--ac)}footer p{margin:6px 0}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
 </style>
@@ -122,7 +122,6 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 <div class="c"><h3>採択後に行うこと</h3><p>①マイページで採択結果と特例の有無を確認 ②研修動画を視聴し、確認テストを受けて修了証を取得（交付申請で提出） ③応募時の事業計画の目標値を確認</p></div>
 <div class="c"><h3>交付申請の流れを見る</h3><p>申請システムからjGrantsまで、7つのステップで手続きを説明しています。</p><p style="margin-top:10px"><a href="#flow" style="color:var(--ac);text-decoration:none">交付申請の流れへ →</a></p></div>
 </div>
-<p class="after"><a href="https://shoryokuka.smrj.go.jp/ippan/">交付申請提出後の流れはこちら →</a></p>
 </div></section>
 <section id="flow"><div class="w" style="max-width:720px">
 <h2>交付申請の流れ</h2>
