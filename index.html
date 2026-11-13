@@ -46,13 +46,13 @@ section:not(.alt) .c,section:not(.alt) .ck label{background:var(--alt)}
 .dg{font-size:22px;margin:36px 0 8px;display:flex;align-items:center;gap:10px}.dg:first-of-type{margin-top:24px}
 .rq{font-size:12px;font-weight:600;background:var(--ac);color:#fff;border-radius:980px;padding:1px 10px}.rq.opt{background:none;border:1px solid var(--ac);color:var(--ac)}
 .dn{margin:0 0 12px;color:var(--sub);font-size:14px}
-.dl2 .di{background:var(--card);border-radius:14px;padding:14px 18px;margin-bottom:8px}
-.dl2 label{display:flex;gap:12px;align-items:flex-start;cursor:pointer}
+.dl2 .di{background:var(--card);border-radius:14px;padding:14px 18px;margin-bottom:8px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.dl2 label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;flex:1 1 240px}
+.dl2 .more{flex:none;margin-left:auto;border:1px solid var(--ac);background:none;color:var(--ac);font:inherit;font-size:13px;font-weight:600;padding:6px 14px;border-radius:980px;cursor:pointer}
+.dl2 .more:hover{background:var(--ac);color:#fff}
+#dm .nh h2{color:var(--tx)}#dm ul{margin:8px 0 0;padding-left:20px;color:var(--sub);font-size:15px}#dm li{margin:8px 0}
 .dl2 .fm{font-style:normal;font-size:11px;font-weight:600;color:var(--sub);border:1px solid var(--ln);border-radius:6px;padding:0 6px;margin-left:6px;vertical-align:2px}
-.dl2 details.ex{background:none;padding:0;margin:8px 0 0 32px;border-radius:0}
-.dl2 .ex summary{display:block;padding:0;font-size:13px;font-weight:600;color:var(--ac)}
-.dl2 .ex summary::after{content:" ⌄"}.dl2 .ex[open] summary::after{content:" ⌃"}
-.dl2 .ex ul{margin:8px 0 0;padding-left:18px;font-size:14px;color:var(--sub)}.dl2 .ex li{margin:4px 0}
+
 .dl2 input{width:20px;height:20px;margin-top:3px;accent-color:var(--ac);flex:none}
 .dl2 b{display:block;font-size:16px;line-height:1.5}.dl2 small a{color:var(--ac);text-decoration:none}.dl2 small{display:block;color:var(--sub);font-size:14px;line-height:1.6}
 .dl2 input:checked+span b{color:var(--sub);text-decoration:line-through}
@@ -192,11 +192,12 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 </div></footer>
 
 <dialog id="nt" aria-labelledby="nth2"><div class="nh"><h2 id="nth2">⚠ 交付申請の前に、必ずお読みください</h2><p>以下の内容を最後までご確認のうえ、お進みください。</p></div><div class="nb" id="ntb"></div><div class="nf"><p id="nthint">↓ 最後までスクロールすると、ボタンが押せるようになります</p><button type="button" class="btn" id="nok" disabled>内容を確認しました</button></div></dialog>
+<dialog id="dm" aria-labelledby="dmt"><div class="nh"><p>書類の説明</p><h2 id="dmt"></h2></div><div class="nb"><ul id="dml"></ul></div><div class="nf"><button type="button" class="btn" id="dmc">閉じる</button></div></dialog>
 <script>
 var DD={"a":[["見積依頼書","全経費分","PDF",["見積もりを依頼したときの依頼書を提出します。口頭での依頼は不可で、補助対象経費ごとに作成します","補助金交付候補者から発注先へ宛てた依頼書であること","見積もり対象の設備・サービスの条件、仕様等が詳細に明示されていること","相見積もりは、同一条件で2者以上に依頼していること","依頼内容（提出期限、提出方法、見積書の有効期限等）が明確であること","参考様式が事務局サイトにあります"]],["見積書","全経費分・最低2者分","PDF",["対象経費のすべてに必要です。契約先1者あたりの見積額の合計が50万円（税抜）以上の経費は、同一条件の相見積もり2者分を提出します","見積依頼と同条件で、項目ごとに詳細に記載されていること（一式表記は不可）","交付申請日時点で有効で、補助金交付候補者宛であること","値引きは各項目に按分されていること（一括値引きは不可）","税抜・税込の価格が明確で、発行元の情報（事業者名・住所・連絡先等）があること","日本語以外の場合は、翻訳がついていること","2者のうち1者は、最低価格を提示した事業者の見積書であること"]],["賃金引き上げ計画の表明書","【指定様式】","PDF",["応募時に設定した1人当たり給与支給総額の目標値を、交付申請時までに全ての従業員（または従業員代表者）・役員へ表明したことを示す書類です","指定様式に必要事項を記入して提出します","表明の方法は、実際に行った方法を記載します（例：社内掲示板への掲載、朝礼で口頭、書面の配布、メール）","従業員と役員は1名ずつ記載します（従業員がいない場合は役員のみ）"]],["不動産登記事項証明書、賃貸借契約書等","実施場所の確認書類","PDF",["補助事業の実施場所を確認するための書類です","実施場所が自社の所有地でない場合は、交付申請までに所有権や使用権が申請者へ移転している必要があります"]],["全従業員分の賃金台帳","応募申請の直近決算期分","PDF・ZIP",["応募申請の直近決算時点で雇用している全従業員分を提出します（退職者の分は不要）","対象期間は直近決算期の12か月分です（12か月に満たない場合は全月分）","応募時に提出した「1人当たり給与支給総額の確認書」の内容と相違がないか確認してください","給与明細・出勤簿・源泉徴収票は不可です。書き方は下の「賃金台帳の提出ルール」を参照してください"]],["研修動画の修了証","視聴後の確認テストで取得","",["研修動画を視聴し、確認テストを終えると発行される修了証をダウンロードして提出します","交付申請の前に、動画の視聴と確認テストを済ませてください"]]],"b":[["選定理由書","相見積もりが取れない場合、または最低価格の者を選ばない場合","PDF",["原則は相見積もりが必要です。次のいずれかに当たる場合に、理由を明らかにして提出します：①2者以上に依頼したうえで、2者の見積書を取得できない理由 ②同一条件の相見積もりで、最低価格の事業者を選定しない理由 ③随意契約とする理由","合理的な理由がない場合は認められません。見積依頼をせずに随意契約にすることは不可です","参考様式（業者選定理由書）が事務局サイトにあります"]],["システム構築費の詳細（仕様書）","システム構築費を計上する場合は必須","PDF",["費用の内訳が、具体的かつ明確に示されている仕様書を提出します","作業工程ごとに、数量・単価・人数・金額・内容説明が記載された明細や仕様書が必要です","仕様書の取得にかかる費用は、補助対象になりません"]],["経営力向上計画の認定書","NPO法人の場合（必須）","PDF",["補助金の事業に係る経営力向上計画の認定を受けた認定書を提出します","交付申請時までに、認定を受けている必要があります"]],["再生事業者の確認書類","再生事業者の場合。支援機関・再生手法ごとに異なる","PDF",["再生事業者として申請した場合は必須です。支援機関または再生手法ごとに提出書類が異なります","確認書は、事業再生支援を実施した支援機関等が発行します。支援を受けた機関へ依頼してください","交付申請時に精査され、補助率が1/2となる場合があります","様式の一部は、事務局サイトからダウンロードできます"]],["リース料軽減計算書・リース取引に係る宣誓書","リース会社と共同申請する場合","PDF",["リース料軽減計算書：対象リース会社から交付されたもの。リース事業協会の確認印が必要です","リース取引に係る宣誓書：対象リース会社から中小機構へあてたもの。対象リース会社の押印が必要です","詳細は「中小企業省力化投資補助事業に係るリース料軽減計算書確認の手引き」を参照してください"]],["履歴事項全部証明書・事業実施場所リスト","応募時から変更がある場合","PDF・Excel",["履歴事項全部証明書は、発行から3か月以内のものを提出します","事業実施場所リスト（指定様式）：実施場所の変更は原則認められません。事業計画に影響を及ぼさない範囲で変更が生じた場合にのみ、交付申請時に申告してください"]],["一般事業主行動計画の策定／両立支援のひろばで公表","従業員21名以上の場合　<a href=\"https://ryouritsu.mhlw.go.jp/index.html\" target=\"_blank\" rel=\"noopener\">登録はこちら ↗</a>","",[]]],"h":[["履歴事項全部証明書","発行から3か月以内","PDF",["履歴事項全部証明書であること（現在事項全部証明書や登記情報サービスは不可）","応募申請日において、発行日から3か月以内であること","応募申請時点で最新の情報が記載されていて、全ページ揃っていること"]],["納税証明書（その2）","直近3期分","PDF",["納税証明書（その2：所得金額用）であること（納税証明データシート等は不可）","発行元が税務署であること","3期分の決算を迎えておらず提出できない場合は、提出可能な年度分を最低1期以上提出します"]],["貸借対照表・損益計算書","各直近2期分","PDF",["応募申請時点で決算を迎えている直近2期分が揃っていること（2期迎えていない場合は1期分のみ可）","損益計算書には、販売費及び一般管理費明細、製造原価報告書（製品の製造に直接関わる業種の場合）をあわせて提出します","人件費、営業利益、減価償却費の項目が明確であること（読み取りづらい場合はマーカーを引く）"]],["役員名簿・株主・出資者名簿","【指定様式】","Excel",["役員名簿：応募申請時点の全役員の情報を記載し、大企業・みなし大企業に所属する役員にはチェックを入れます","株主・出資者名簿：応募申請時点の全株主・出資者の情報を記載し、大企業・みなし大企業にはチェックを入れます","株主・出資者が21名以上の場合は、株保有数・出資価格が多い方から20名分を入力します"]],["1人当たり給与支給総額の確認書","【指定様式】","Excel",["応募申請の直近決算時点で雇用している全従業員の給与支給総額が記載されていること","1人当たりの給与支給総額が正しく算出されていること（直近決算期が12か月に満たない場合は、12か月に換算した値。シート内で算出できます）","初回の交付申請時には、この確認書の添付口はありません。修正が必要な場合は「その他資料」の添付口に添付し、コメント欄に記載してください"]],["事業実施場所リスト","実施場所が複数の場合。【指定様式】","Excel",["事業実施場所が複数ある場合、主たる実施場所は申請時に入力し、その他の実施場所をこのリストに入力します","実施場所の変更は原則認められません。事務局から変更を承認された場合のみ、必要に応じて提出します"]]],"k":[["確定申告書の控え（第一表）","","PDF",["令和6年分または令和7年分の確定申告書であること","電子申告の印字または受領印等で、税務署での受領が確認できること（確認できない場合は受信通知もあわせて提出）","個人番号（マイナンバー）は黒塗りにします"]],["納税証明書（その2）","直近1年分","PDF",["納税証明書（その2：所得金額用）であること（納税証明データシート等は不可）","発行元が税務署であること"]],["事業実施場所リスト","実施場所が複数の場合。【指定様式】","Excel",["事業実施場所が複数ある場合、主たる実施場所は申請時に入力し、その他の実施場所をこのリストに入力します","実施場所の変更は原則認められません。事務局から変更を承認された場合のみ、必要に応じて提出します"]]]};
 var DK="shoryokuka-docs-v1",DS={};
 try{DS=JSON.parse(localStorage.getItem(DK)||"{}")}catch(e){DS={}}
-function dr(id,k){var h="";DD[k].forEach(function(r,i){var q=k+i,b=r[3]||[];h+='<div class="di"><label><input type="checkbox" data-id="'+q+'"'+(DS[q]?" checked":"")+"><span><b>"+r[0]+(r[2]?' <em class="fm">'+r[2]+"</em>":"")+"</b>"+(r[1]?"<small>"+r[1]+"</small>":"")+"</span></label>"+(b.length?'<details class="ex"><summary>説明を見る</summary><ul><li>'+b.join("</li><li>")+"</li></ul></details>":"")+"</div>"});document.getElementById(id).innerHTML=h}
+function dr(id,k){var h="";DD[k].forEach(function(r,i){var q=k+i,b=r[3]||[];h+='<div class="di"><label><input type="checkbox" data-id="'+q+'"'+(DS[q]?" checked":"")+"><span><b>"+r[0]+"</b>"+(r[2]?"<small>提出様式："+r[2]+"</small>":"")+(r[1]?"<small>"+r[1]+"</small>":"")+"</span></label>"+(b.length?'<button type="button" class="more" data-k="'+k+'" data-i="'+i+'">詳しくはこちら</button>':"")+"</div>"});document.getElementById(id).innerHTML=h}
 function dupd(){var c=document.querySelectorAll("#da input"),n=0;c.forEach(function(x){if(x.checked)n++});document.getElementById("dpt").textContent="全事業者共通 "+n+" / "+c.length+" 件 完了";document.getElementById("dpb").style.width=(n/c.length*100)+"%"}
 function dsv(){try{localStorage.setItem(DK,JSON.stringify(DS))}catch(e){}}
 dr("da","a");dr("db","b");dr("dc","h");dupd();
@@ -214,6 +215,12 @@ nt.addEventListener("cancel",function(e){e.preventDefault()});
 ok.addEventListener("click",function(){nt.close();document.body.classList.remove("lock")});
 var r=document.getElementById("nre");if(r)r.addEventListener("click",open);
 open();})();
+
+(function(){var dm=document.getElementById("dm");if(!dm||!dm.showModal)return;
+document.getElementById("docs").addEventListener("click",function(e){var b=e.target.closest(".more");if(!b)return;var r=DD[b.dataset.k][b.dataset.i];document.getElementById("dmt").textContent=r[0];document.getElementById("dml").innerHTML="<li>"+(r[3]||[]).join("</li><li>")+"</li>";document.body.classList.add("lock");dm.showModal();dm.querySelector(".nb").scrollTop=0});
+document.getElementById("dmc").addEventListener("click",function(){dm.close()});
+dm.addEventListener("click",function(e){if(e.target===dm)dm.close()});
+dm.addEventListener("close",function(){document.body.classList.remove("lock")});})();
 </script>
 </body>
 </html>
